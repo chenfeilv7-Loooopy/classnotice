@@ -1,0 +1,92 @@
+<!-- student.html（学生端） -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>学生端 - 任务查看</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+      background: linear-gradient(135deg, #e0f7df, #c8f5e4);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #2e7d32;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px #fff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    li {
+      background: #fff;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .task-info {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .task-title {
+      font-weight: bold;
+      color: #388e3c;
+      margin-bottom: 5px;
+    }
+
+    .task-content {
+      color: #555;
+    }
+
+    .status-btn {
+      border: none;
+      border-radius: 20px;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .status-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .done {
+      background: #66bb6a;
+      color: white;
+    }
+
+    .todo {
+      background: #ffcc80;
+      color: #5d4037;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌿 学生任务查看页面</h1>
+  <ul id="studentTaskList"></ul>
+
+  <script type="module" src="./firebase.js"></script>
+  <script type="module" src="./student.js"></script>
+</body>
+</html>
+

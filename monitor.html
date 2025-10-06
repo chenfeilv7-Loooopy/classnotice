@@ -1,0 +1,136 @@
+<!-- monitor.html（班长端） -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>班长端 - 任务管理</title>
+  <style>
+    body {
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+      background: linear-gradient(135deg, #ffe4ec, #d7e8ff);
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #ff6699;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px #fff;
+    }
+
+    .task-input {
+      background: #fff;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .task-input input, .task-input textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ffd6e0;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .task-input button {
+      background: #66b3ff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .task-input button:hover {
+      background: #3385ff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    li {
+      background: #fff;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .task-info {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .task-title {
+      font-weight: bold;
+      color: #ff6699;
+      margin-bottom: 5px;
+    }
+
+    .task-content {
+      color: #555;
+    }
+
+    .task-buttons button {
+      border: none;
+      border-radius: 20px;
+      padding: 8px 15px;
+      margin-left: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .task-buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    .edit-btn {
+      background: #ffb366;
+      color: white;
+    }
+
+    .delete-btn {
+      background: #ff6666;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 班长任务管理页面</h1>
+
+  <div class="task-input">
+    <input type="text" id="taskTitle" placeholder="✏️ 输入任务标题">
+    <textarea id="taskContent" placeholder="📝 输入任务内容"></textarea> 
+    <button id="publishTask">💌 发布任务</button>
+  </div>
+
+  <h2>📋 已发布任务</h2>
+  <ul id="taskList"></ul>
+
+  <!-- 引入 Firebase 初始化 -->
+  <script type="module" src="./firebase.js"></script>
+  <!-- 班长端 JS -->
+  <script type="module" src="./monitor.js"></script>
+</body>
+</html>
